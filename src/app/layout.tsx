@@ -4,6 +4,11 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const BASE_DOMAIN = "https://www.estudiomercadoochoa.com.ar";
+const SITE_NAME = "Estudio Jurídico Mercado Ochoa Abogados";
+const LOGO_PATH = "/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png";
+const absoluteUrl = (path: string) => new URL(path, BASE_DOMAIN).toString();
+
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -18,31 +23,39 @@ const sourceSans3 = Source_Sans_3({
 
 export const metadata: Metadata = {
   title: {
-    default: "ESTUDIO JURÍDICO MERCADO OCHOA ABOGADOS | Abogados en Neuquén",
-    template: "%s | ESTUDIO JURÍDICO MERCADO OCHOA ABOGADOS",
+    default: "Estudio Jurídico Mercado Ochoa Abogados | Abogados en Neuquén",
+    template: "%s | Estudio Jurídico Mercado Ochoa Abogados",
   },
   description:
-    "Abogados en Neuquén Capital con 5 años de experiencia. Soluciones legales claras y efectivas en derecho civil, familia, laboral y más.",
-  metadataBase: new URL("https://example.com"),
+    "Abogados en Neuquén y Río Negro con asesoría integral en derecho civil, familia, laboral, ambiental y accidentes de tránsito.",
+  metadataBase: new URL(BASE_DOMAIN),
   icons: {
-    icon: "/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png",
-    shortcut: "/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png",
-    apple: "/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png",
+    icon: LOGO_PATH,
+    shortcut: LOGO_PATH,
+    apple: LOGO_PATH,
   },
   openGraph: {
-    title: "ESTUDIO JURÍDICO MERCADO OCHOA ABOGADOS | Abogados en Neuquén",
+    title: "Estudio Jurídico Mercado Ochoa Abogados | Abogados en Neuquén",
     description:
-      "Abogados en Neuquén Capital con 5 años de experiencia. Soluciones legales claras y efectivas en derecho civil, familia, laboral y más.",
-    url: "https://example.com",
-    siteName: "ESTUDIO JURÍDICO MERCADO OCHOA ABOGADOS",
+      "Abogados en Neuquén y Río Negro con asesoría integral en derecho civil, familia, laboral, ambiental y accidentes de tránsito.",
+    url: BASE_DOMAIN,
+    siteName: SITE_NAME,
+    images: [
+      {
+        url: absoluteUrl(LOGO_PATH),
+        alt: "Estudio Jurídico Mercado Ochoa Abogados - Logo",
+      },
+    ],
     locale: "es_AR",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "ESTUDIO JURÍDICO MERCADO OCHOA ABOGADOS | Abogados en Neuquén",
-    description:
-      "Abogados en Neuquén Capital con 5 años de experiencia. Soluciones legales claras y efectivas en derecho civil, familia, laboral y más.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
@@ -54,116 +67,121 @@ export default function RootLayout({
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Estudio Jurídico Mercado Ochoa Abogados",
-    "description": "Abogados en Neuquén Capital y Río Negro con 5 años de experiencia. Soluciones legales claras y efectivas en derecho civil, familia, laboral, ambiental y accidentes de tránsito.",
-    "url": "https://example.com",
-    "logo": "https://example.com/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png",
-    "image": "https://example.com/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png",
-    "telephone": "+5492994728756",
-    "address": {
+    name: SITE_NAME,
+    description:
+      "Abogados en Neuquén y Río Negro. Soluciones legales claras y efectivas en derecho civil, contratos, familia, sucesiones, derecho laboral, derecho ambiental y accidentes de tránsito.",
+    url: BASE_DOMAIN,
+    logo: absoluteUrl(LOGO_PATH),
+    image: absoluteUrl(LOGO_PATH),
+    telephone: "+5492994728756",
+    email: "mercadoochoaabogados@gmail.com",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "Córdoba 466",
-      "addressLocality": "Neuquén Capital",
-      "addressRegion": "Neuquén",
-      "addressCountry": "AR"
+      streetAddress: "Córdoba 466",
+      addressLocality: "Neuquén Capital",
+      addressRegion: "Neuquén",
+      addressCountry: "AR",
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "-38.9516",
-      "longitude": "-68.0591"
-    },
-    "openingHours": "Mo-Fr 09:00-18:00",
-    "areaServed": [
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
+    areaServed: [
       {
         "@type": "City",
-        "name": "Neuquén Capital"
+        name: "Neuquén Capital",
       },
       {
         "@type": "State",
-        "name": "Río Negro"
-      }
+        name: "Río Negro",
+      },
     ],
-    "serviceType": [
+    serviceType: [
       "Derecho Civil",
       "Contratos",
       "Familia y Sucesiones",
       "Derecho Laboral",
       "Derecho Ambiental",
-      "Accidentes de Tránsito"
+      "Accidentes de Tránsito",
+      "Asesoría Integral 360°",
     ],
-    "hasOfferCatalog": {
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "Servicios Legales",
-      "itemListElement": [
+      name: "Áreas de práctica",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Derecho Civil y Contratos",
-            "description": "Asesoría legal en derecho civil, contratos y obligaciones"
-          }
+            name: "Civil y Contratos en Neuquén",
+            description:
+              "Asesoramos en redacción y revisión de contratos, incumplimientos y responsabilidad civil.",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Familia y Sucesiones",
-            "description": "Divorcios, sucesiones, alimentos y derecho de familia"
-          }
+            name: "Familia y Sucesiones en Neuquén",
+            description:
+              "Atendemos divorcios, cuota alimentaria, régimen de comunicación, uniones convivenciales, compensación económica, filiación y tramitación integral de sucesiones.",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Derecho Laboral",
-            "description": "Despidos, accidentes laborales y conflictos laborales"
-          }
+            name: "Abogado Laboral en Neuquén",
+            description:
+              "Defensa de trabajadores y asesoramiento a empresas: despidos, diferencias salariales, registración deficiente, accidentes y enfermedades laborales (ART) y acuerdos.",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Derecho Ambiental",
-            "description": "Asesoría en normativa ambiental y conflictos ambientales"
-          }
+            name: "Derecho Ambiental en Neuquén",
+            description:
+              "Prevención de daños, reclamos por afectación ambiental y cumplimiento normativo para particulares y pymes.",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Accidentes de Tránsito",
-            "description": "Reclamos por accidentes de tránsito y seguros"
-          }
-        }
-      ]
+            name: "Accidentes de Tránsito en Neuquén",
+            description:
+              "Gestión integral de reclamos a aseguradoras, tasación de lesiones y daños materiales, acuerdos y juicios.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Asesoría Integral 360°",
+            description:
+              "Diagnóstico legal completo para personas y negocios: evaluación de riesgos, diseño de contratos, cumplimiento regulatorio y prevención de conflictos.",
+          },
+        },
+      ],
     },
-    "sameAs": [
+    sameAs: [
       "https://instagram.com/mercadoochoaabogados",
-      "https://www.linkedin.com/in/ariel-a-mercado-ochoa-11b05a2a0/"
-    ]
+      "https://www.linkedin.com/in/ariel-a-mercado-ochoa-11b05a2a0/",
+    ],
   };
 
   return (
     <html lang="es">
       <head>
-        {/* Schema Markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
-        
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://example.com" />
-        
-        {/* Force favicon to use site logo, overriding default favicon.ico */}
-        <link rel="icon" href="/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png?v=4" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png?v=4" />
-        <link rel="apple-touch-icon" href="/ChatGPT Image 1 oct 2025, 11_38_06 p.m..png?v=4" />
-        
-        {/* Additional meta tags */}
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#011640" />
         <meta name="google-site-verification" content="r7W9ddaE6k6m_UMpV_uQ07D1q9RKFwN5Ex6mRLPuLyU" />
       </head>
@@ -177,4 +195,3 @@ export default function RootLayout({
     </html>
   );
 }
-

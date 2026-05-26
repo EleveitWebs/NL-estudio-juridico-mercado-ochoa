@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Gracias por tu consulta",
+  description:
+    "Confirmación de consulta recibida por Estudio Jurídico Mercado Ochoa Abogados.",
+  alternates: {
+    canonical: "/gracias",
+  },
+};
 
 export default function Gracias() {
   return (

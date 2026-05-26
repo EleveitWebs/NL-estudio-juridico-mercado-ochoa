@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+
+Sitemap: https://www.estudiomercadoochoa.com.ar/sitemap.xml
+Host: www.estudiomercadoochoa.com.ar
