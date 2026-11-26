@@ -61,7 +61,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-white font-source-sans text-sm font-semibold">Dirección</p>
-                  <a href="https://www.google.com/maps/search/?api=1&query=Córdoba%20466%2C%20Neuquén%20Capital%2C%20Argentina" target="_blank" rel="noopener noreferrer" className="text-white/80 font-source-sans text-sm hover:text-[#D9B26A] transition-colors">Córdoba 466, Neuquén Capital</a>
+                  <a href="https://www.google.com/maps/search/?api=1&query=San%20Martín%20196%2C%20Cipolletti%2C%20Río%20Negro%2C%20Argentina" target="_blank" rel="noopener noreferrer" className="text-white/80 font-source-sans text-sm hover:text-[#D9B26A] transition-colors">San Martín 196, Of. 5, Cipolletti, Río Negro</a>
                 </div>
               </div>
               <div className="flex items-start gap-3 group">

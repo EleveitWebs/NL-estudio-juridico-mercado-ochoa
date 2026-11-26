@@ -77,9 +77,9 @@ export default function RootLayout({
     email: "mercadoochoaabogados@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Córdoba 466",
-      addressLocality: "Neuquén Capital",
-      addressRegion: "Neuquén",
+      streetAddress: "San Martín 196, Of. 5",
+      addressLocality: "Cipolletti",
+      addressRegion: "Río Negro",
       addressCountry: "AR",
     },
     openingHoursSpecification: [

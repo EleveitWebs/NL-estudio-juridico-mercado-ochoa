@@ -1,8 +1,8 @@
 import SectionTransition from "./SectionTransition";
 import ScrollReveal from "./ScrollReveal";
 
-const ADDRESS = "Córdoba 466, Neuquén Capital";
-const MAP_QUERY = "Córdoba 466, Neuquén Capital, Argentina";
+const ADDRESS = "San Martín 196, Of. 5, Cipolletti, Río Negro";
+const MAP_QUERY = "San Martín 196, Cipolletti, Río Negro, Argentina";
 const MAP_LAT: number | null = null;
 const MAP_LNG: number | null = null;
 const HAS_COORDS = MAP_LAT !== null && MAP_LNG !== null;
